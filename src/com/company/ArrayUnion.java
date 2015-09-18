@@ -46,6 +46,9 @@ public class ArrayUnion {
             int index = Arrays.binarySearch(copy, right[j]);
             if(index > -1) {
                 result[i] = right[j];
+
+
+                ///
                 i++;
             }
         }
