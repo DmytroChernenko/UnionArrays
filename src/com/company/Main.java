@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 	// write your code here
         int[] left = {1, 5, 4, 23, 65, 32, 78};
         int[] right = {3, 5, 24, 4, 1, 2, 34, 45, 32, 5};
@@ -19,11 +19,6 @@ public class Main {
         System.out.println(Arrays.toString(right));
         System.out.println(Arrays.toString(result));
         System.out.println(Arrays.toString(TRUE_RESULT));
-
-        boolean isResultTrue = ArrayUnion.checkArrays(result, TRUE_RESULT);
-
-        System.out.println("isResultTrue = " + isResultTrue);
-
 
     }
 }

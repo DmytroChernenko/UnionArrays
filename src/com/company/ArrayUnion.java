@@ -5,6 +5,8 @@ import java.util.Arrays;
 /**
  * Created by Dmytro on 18.09.15.
  */
+
+
 public class ArrayUnion {
 
     private int[] left;
@@ -18,12 +20,15 @@ public class ArrayUnion {
     public ArrayUnion() {
     }
 
-    public int[] leftUnion(int[] left, int[] right) {
+    public int[] leftUnion(int[] left, int[] right) throws ArrayNullPointerException{
 
-        int length = left.length;
+        if(left == null)
+            throw new ArrayNullPointerException("Your left array is null");
+        else if(right == null)
+            throw new ArrayNullPointerException("Your right array is null");
 
+        int lengthOfResultArray = left.length;
         int[] copy = Arrays.copyOf(left, left.length);
-
 
         int count = 0;
 
@@ -35,10 +40,10 @@ public class ArrayUnion {
                 count++;
         }
 
-        length += count;
+        lengthOfResultArray += count;
 
 
-        int[] result = Arrays.copyOf(left, length);
+        int[] result = Arrays.copyOf(left, lengthOfResultArray);
 
         int i = left.length;
 
@@ -46,27 +51,10 @@ public class ArrayUnion {
             int index = Arrays.binarySearch(copy, right[j]);
             if(index > -1) {
                 result[i] = right[j];
-
-
-                ///
                 i++;
             }
         }
 
         return result;
-    }
-
-
-    public static boolean checkArrays(int[] result, int[] true_result) {
-        if( result.length != true_result.length)
-            return false;
-
-        for (int i = 0; i < result.length; i++) {
-            if (result[i] != true_result[i])
-                return false;
-        }
-
-        return true;
-
     }
 }
