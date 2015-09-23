@@ -1,4 +1,4 @@
-package com.company;
+package com.company.arrayHelper;
 
 
 
@@ -13,6 +13,31 @@ import static org.junit.Assert.*;
  * Created by Dmytro on 21.09.15.
  */
 public class ArrayUnionTest {
+
+    @Test
+    public void testMerge(){
+        //initialize variable inputs
+        int[] left = {1, 5, 4, 23, 65, 32, 78};
+        int[] right = {3, 5, 24, 54, 1, 2, 34, 45, 32, 5};
+
+        final int[] EXPECTED_RESULT = {1, 5, 4, 23, 65, 32, 78, 3, 24 ,54  ,2 ,34 ,45};
+        // initialize mocks
+
+
+        //initialize class to test
+        ArrayUnion testclass = new ArrayUnion();
+
+        //invoke method on class to test
+        int[] returnedValue = testclass.merge(left, right);
+
+        // assert return value
+        Assert.assertArrayEquals(EXPECTED_RESULT, returnedValue);
+
+        // verify mock expectations
+
+    }
+
+
     @Test
     public void testLefttUnion() throws Exception {
         //initialize variable inputs
@@ -54,7 +79,7 @@ public class ArrayUnionTest {
             int[] returnedValue = testclass.leftUnion(left, right);
             fail("Exception should be thrown");
         }catch (ArrayNullPointerException e){
-            Assert.assertEquals(expectedResult, e.getMessage());
+            assertEquals(expectedResult, e.getMessage());
         }
     }
 

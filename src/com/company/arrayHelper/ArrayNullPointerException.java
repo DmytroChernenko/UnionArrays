@@ -1,4 +1,4 @@
-package com.company;
+package com.company.arrayHelper;
 
 /**
  * Created by Dmytro on 21.09.15.

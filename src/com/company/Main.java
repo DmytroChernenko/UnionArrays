@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.arrayHelper.ArrayUnion;
+
 import java.util.Arrays;
 
 public class Main {

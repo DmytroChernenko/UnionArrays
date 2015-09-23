@@ -1,4 +1,4 @@
-package com.company;
+package com.company.arrayHelper;
 
 import java.util.Arrays;
 
@@ -51,6 +51,44 @@ public class ArrayUnion {
             int index = Arrays.binarySearch(copy, right[j]);
             if(index > -1) {
                 result[i] = right[j];
+                i++;
+            }
+        }
+
+        return result;
+    }
+
+    public int[] merge(int[] leftArray, int[] rightArray) {
+
+        if(leftArray == null)
+            throw new ArrayNullPointerException("Your left array is null");
+        else if(rightArray == null)
+            throw new ArrayNullPointerException("Your right array is null");
+
+        int lengthOfResultArray = leftArray.length;
+        int[] copy = Arrays.copyOf(leftArray, leftArray.length);
+
+        int count = 0;
+
+        Arrays.sort(copy);
+
+        for (int element : rightArray) {
+            int index = Arrays.binarySearch(copy, element);
+            if(index < 0)
+                count++;
+        }
+
+        lengthOfResultArray += count;
+
+
+        int[] result = Arrays.copyOf(leftArray, lengthOfResultArray);
+
+        int i = leftArray.length;
+
+        for (int j = 0; i < result.length; j++) {
+            int index = Arrays.binarySearch(copy, rightArray[j]);
+            if(index < 0) {
+                result[i] = rightArray[j];
                 i++;
             }
         }
