@@ -61,6 +61,7 @@ public class ArrayHelperTest {
         rightArrayPerson[1] = person4;
         rightArrayPerson[2] = person5;
 
+
         expectedResult[0] = person1;
         expectedResult[1] = person2;
         expectedResult[2] = person3;
