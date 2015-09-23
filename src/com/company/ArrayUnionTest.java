@@ -59,13 +59,13 @@ public class ArrayUnionTest {
     }
 
     @Test
-    public void testLeftUnionWithException() throws Exception {
+    public void testLeftUnionWhenRightArrayIsNull() throws Exception {
         //initialize variable inputs
-        int[] left = null;
-        int[] right = {3, 5, 24, 4, 1, 2, 34, 45, 32, 5};
+        int[] left = {3, 5, 24, 4, 1, 2, 34, 45, 32, 5};
+        int[] right = null;
 
 
-        String expectedValue = "Your left array is null";
+        String expectedValue = "Your right array is null";
         // initialize mocks
 
 

@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) throws Exception{
-	// write your code here
+	    // write your code here
         int[] left = {1, 5, 4, 23, 65, 32, 78};
         int[] right = {3, 5, 24, 4, 1, 2, 34, 45, 32, 5};
 
